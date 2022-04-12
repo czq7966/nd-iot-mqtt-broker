@@ -1,0 +1,11 @@
+[Unit]
+Description=MQTT Broker
+
+[Service]
+WorkingDirectory=/data/mqtt-server
+ExecStart=/data/node/bin/node /data/mqtt-server/src/index.js
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
