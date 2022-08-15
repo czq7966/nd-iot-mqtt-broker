@@ -3,16 +3,20 @@ var aedes;
 // mqtt broker
 do {
     function onAuthenticate (client, username, password, callback) {
-        let users = ["device", "cmdgate"]
-        
-        if (users.indexOf(username) < 0) {
-            callback({ returnCode: 4 }, false);
-            // console.log("invalid user:" + username);
-        }
-        else {
+        if (username)
             callback(null, true);
-            // console.log("user login:" + username);
-        }
+        else
+            callback({ returnCode: 4 }, false);
+        
+        // let users = ["device", "cmdgate"]
+        // if (users.indexOf(username) < 0) {
+        //     callback({ returnCode: 4 }, false);
+        //     // console.log("invalid user:" + username);
+        // }
+        // else {
+        //     callback(null, true);
+        //     // console.log("user login:" + username);
+        // }
     }
   
 
