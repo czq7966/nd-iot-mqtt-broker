@@ -3,10 +3,12 @@ var aedes;
 // mqtt broker
 do {
     function onAuthenticate (client, username, password, callback) {
-        if (username)
-            callback(null, true);
-        else
-            callback({ returnCode: 4 }, false);
+        callback(null, true);
+
+        // if (username)
+        //     callback(null, true);
+        // else
+        //     callback({ returnCode: 4 }, false);
         
         // let users = ["device", "cmdgate"]
         // if (users.indexOf(username) < 0) {
